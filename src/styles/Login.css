@@ -1,0 +1,163 @@
+/* --- Reset Básico e Estilos Globais --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: 'Nunito Sans', sans-serif;
+  background-color: #F5F5F5;
+}
+
+/* --- Cores Principais --- */
+:root {
+  --azul-principal: #3333BD;
+  --amarelo-principal: #FCFC30;
+  --cinza-claro: #F5F5F5;
+  --cinza-input: #D4D8E8;
+  --branco: #FFFFFF;
+}
+
+/* --- Layout Principal (Container) --- */
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* --- Estilos dos Painéis (Esquerdo e Direito) --- */
+.panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Painel da Esquerda (Login) */
+.panel-login {
+  flex-basis: 40%;
+  background-color: var(--azul-principal);
+  color: var(--branco);
+}
+
+/* Painel da Direita (Criar Conta) */
+.panel-signup {
+  flex-basis: 60%;
+  background-color: var(--cinza-claro);
+  color: var(--azul-principal);
+}
+
+/* Conteúdo dentro dos painéis */
+.panel-content {
+  max-width: 380px;
+  width: 100%;
+}
+
+/* --- Elementos do Painel de Login (Esquerda) --- */
+.panel-login h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.panel-login p {
+  font-size: 1.25rem;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+/* --- Elementos do Painel de Criar Conta (Direita) --- */
+.panel-signup h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  background-color: var(--cinza-input);
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.input-group i {
+  color: var(--azul-principal);
+  margin-right: 15px;
+  width: 20px;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.input-group input {
+  flex-grow: 1;
+  border: none;
+  background: transparent;
+  padding: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.input-group input:focus {
+  outline: none;
+}
+
+.input-group input::placeholder {
+  color: #5d5d7a;
+  font-weight: 400;
+}
+
+/* --- Botões (Estilo unificado) --- */
+.btn {
+  padding: 15px 30px;
+  /* ATUALIZAÇÃO: Adiciona uma borda transparente para evitar "pulo" no hover */
+  border: 3px solid transparent;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  /* ATUALIZAÇÃO: Adiciona 'border-color' à transição */
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--amarelo-principal);
+  color: var(--azul-principal);
+}
+
+.panel-signup .btn {
+  margin-top: 10px;
+  width: 100%;
+  color: #3333BD;
+  font-weight: 700;
+  background-color: #FCFC30;
+}
+
+/* --- NOVAS REGRAS DE HOVER --- */
+
+/* 1. Botão na parte AZUL (Login) */
+.panel-login .btn:hover {
+  transform: scale(1.2); /* Aumenta um pouco de tamanho */
+  transition: 0.5s;
+  border: 1px solid #FCFC30;
+}
+
+/* 2. Botão na parte BRANCA (Signup) */
+.panel-signup .btn:hover {
+  transform: scale(1.08); /* Aumenta um pouco de tamanho */
+  transition: 0.5s;
+  font-weight: 700;
+  
+}
+
