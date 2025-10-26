@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
+import '../styles/Login.css';
+import logo from '../arquivos/images/logo.png'; 
 
-// 1. IMPORTAÇÕES UNIFICADAS
-// Importa o CSS (apenas uma vez)
-import '../../src/styles/'; 
-// Importa o logo (vou usar o caminho correto que definimos antes)
-import logo from '../../src/arquivos/images/logo.png'; 
-
-// 2. DEFINIÇÃO DO PRIMEIRO COMPONENTE (PAINEL DE LOGIN)
-// (Note que não precisamos de 'export' aqui)
 function PanelLogin() {
   return (
     <div className="panel panel-login">
@@ -25,8 +19,6 @@ function PanelLogin() {
   );
 }
 
-// 3. DEFINIÇÃO DO SEGUNDO COMPONENTE (PAINEL DE SIGNUP)
-// (Também sem 'export')
 function PanelSignup() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
@@ -34,7 +26,6 @@ function PanelSignup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // No futuro, você pode chamar uma API de login/cadastro aqui
     console.log({ nome, email, senha });
   };
 
@@ -84,8 +75,6 @@ function PanelSignup() {
   );
 }
 
-// 4. COMPONENTE PRINCIPAL DA PÁGINA (LOGIN)
-// Este é o componente que o seu roteador vai renderizar
 function Login() {
   return (
     <div className="container">
@@ -95,6 +84,4 @@ function Login() {
   );
 }
 
-// 5. EXPORTA APENAS O COMPONENTE DA PÁGINA
 export default Login;
-
